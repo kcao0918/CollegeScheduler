@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:title="@string/classes"
+        android:id="@+id/classesMenu"
+        android:icon="@drawable/baseline_class_24" />
+    <item android:title="@string/assignments"
+        android:id="@+id/assignmentsMenu"
+        android:icon="@drawable/baseline_assignment_24"/>
+    <item android:title="@string/todo"
+        android:id="@+id/todoMenu"
+        android:icon="@drawable/baseline_checklist_24"/>
+    <item android:title="@string/tests"
+        android:id="@+id/testsMenu"
+        android:icon="@drawable/baseline_dates_24"/>
+</menu>

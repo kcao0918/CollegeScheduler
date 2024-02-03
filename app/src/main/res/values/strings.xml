@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">CollegeScheduler</string>
+    <string name="classes">Classes</string>
+    <string name="assignments">Assignments</string>
+    <string name="additem">AddItem</string>
+    <string name="todo">To Do</string>
+    <string name="tests">Tests</string>
+    <string name="enterItem">Add Item</string>
+    <string name="InputOneNameText">Enter class name:</string>
+    <string name="itemNameText">Enter item name:</string>
+    <string name="timeText">Enter time:</string>
+</resources>
