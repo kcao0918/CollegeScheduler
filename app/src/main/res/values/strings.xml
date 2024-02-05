@@ -9,4 +9,5 @@
     <string name="InputOneNameText">Enter class name:</string>
     <string name="itemNameText">Enter item name:</string>
     <string name="timeText">Enter time:</string>
+    <string name="ChangeItem">Change Item</string>
 </resources>

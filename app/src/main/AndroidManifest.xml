@@ -23,6 +23,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".AddItem" />
+        <activity android:name=".EditItem" />
+        <activity android:name=".ListRow" />
         <activity android:name=".Assignments" />
         <activity android:name=".Classes" />
         <activity android:name=".Tasks" />

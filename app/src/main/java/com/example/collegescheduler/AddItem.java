@@ -2,6 +2,7 @@ package com.example.collegescheduler;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +20,8 @@ import java.io.FileOutputStream;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+
+import kotlinx.coroutines.scheduling.Task;
 
 public class AddItem extends AppCompatActivity {
     private EditText input1;
@@ -194,18 +197,22 @@ public class AddItem extends AppCompatActivity {
             case "classes":
                 Classes.items.remove(position);
                 Classes.adapter.notifyDataSetChanged();
+                saveContent(Classes.adapter.getContext());
                 break;
             case "assignments":
                 Assignments.items.remove(position);
                 Assignments.adapter.notifyDataSetChanged();
+                saveContent(Assignments.adapter.getContext());
                 break;
             case "todo":
                 Tasks.items.remove(position);
                 Tasks.adapter.notifyDataSetChanged();
+                saveContent(Tasks.adapter.getContext());
                 break;
             case "tests":
                 Tests.items.remove(position);
                 Tests.adapter.notifyDataSetChanged();
+                saveContent(Tests.adapter.getContext());
                 break;
             default:
                 break;
@@ -237,4 +244,5 @@ public class AddItem extends AppCompatActivity {
                 break;
         }
     }
+
 }

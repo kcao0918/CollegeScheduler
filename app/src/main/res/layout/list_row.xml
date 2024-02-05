@@ -45,7 +45,7 @@
         />
 
     <ImageView
-        android:id="@+id/edit"
+        android:id="@+id/editIcon"
         android:layout_width="22sp"
         android:layout_height="22sp"
         android:layout_marginLeft="3sp"

@@ -1,10 +1,14 @@
 package com.example.collegescheduler;
 
+import static androidx.core.content.ContextCompat.startActivity;
+
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -44,7 +48,6 @@ public class ListViewAdapter extends ArrayAdapter<ItemView> {
         textView2.setText(currentNumberPosition.getInputTwo());
         TextView textView3 = currentItemView.findViewById(R.id.name3);
         textView3.setText(currentNumberPosition.getInputThree());
-
         remove.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -52,6 +55,7 @@ public class ListViewAdapter extends ArrayAdapter<ItemView> {
                 Toast.makeText(context, "Item removed at position: " + (position+1), Toast.LENGTH_SHORT).show();
             }
         });
+
         return currentItemView;
     }
 }
