@@ -61,7 +61,7 @@ public class ListViewAdapter extends ArrayAdapter<ItemView> {
         edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(view.getContext(), "Item removed at pain: " + (position+1), Toast.LENGTH_SHORT).show();
+                EditItem.editItemPosition = position;
                 Intent intent = new Intent(view.getContext(), EditItem.class);
                 view.getContext().startActivity(intent);
             }

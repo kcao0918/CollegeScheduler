@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     FloatingActionButton addButton;
 
-    static Classes classFragment = new Classes();
+    public static Classes classFragment = new Classes();
     static Assignments assignmentsFragment = new Assignments();
     static Tasks tasksFragment = new Tasks();
     static Tests testsFragment = new Tests();

@@ -29,18 +29,42 @@ public class Assignments extends Fragment{
         lv.setAdapter(adapter);
         AddItem.loadContent(Assignments.adapter.getContext());
 
-        // Find view within fragment and set click listener
         Button sortInputOne = rootView.findViewById(R.id.button1);
+        Button sortInputTwo = rootView.findViewById(R.id.button2);
+        Button sortInputThree = rootView.findViewById(R.id.button3);
+
         sortInputOne.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sortItemOne();
                 AddItem.saveContent(Assignments.adapter.getContext());
-                items = new ArrayList<>();
+                items.clear();
                 AddItem.loadContent(Assignments.adapter.getContext());
+                Assignments.adapter.notifyDataSetChanged();
             }
         });
 
+        sortInputTwo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sortItemTwo();
+                AddItem.saveContent(Assignments.adapter.getContext());
+                items.clear();
+                AddItem.loadContent(Assignments.adapter.getContext());
+                Assignments.adapter.notifyDataSetChanged();
+            }
+        });
+
+        sortInputThree.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sortItemThree();
+                AddItem.saveContent(Assignments.adapter.getContext());
+                items.clear();
+                AddItem.loadContent(Assignments.adapter.getContext());
+                Assignments.adapter.notifyDataSetChanged();
+            }
+        });
         return rootView;
     }
 
@@ -48,6 +72,26 @@ public class Assignments extends Fragment{
         for (int i = 0; i < items.size(); i++) {
             for (int j = 0; j < items.size() - i - 1; j++) {
                 if (items.get(j).getInputOne().compareTo(items.get(j + 1).getInputOne()) > 0) {
+                    swap(j, j + 1, items);
+                }
+            }
+        }
+    }
+
+    public void sortItemTwo() {
+        for (int i = 0; i < items.size(); i++) {
+            for (int j = 0; j < items.size() - i - 1; j++) {
+                if (items.get(j).getInputTwo().compareTo(items.get(j + 1).getInputTwo()) > 0) {
+                    swap(j, j + 1, items);
+                }
+            }
+        }
+    }
+
+    public void sortItemThree() {
+        for (int i = 0; i < items.size(); i++) {
+            for (int j = 0; j < items.size() - i - 1; j++) {
+                if (items.get(j).getInputThree().compareTo(items.get(j + 1).getInputThree()) > 0) {
                     swap(j, j + 1, items);
                 }
             }

@@ -43,18 +43,22 @@ public class EditItem extends AppCompatActivity {
                 switch (MainActivity.selectedFrag) {
                     case "classes":
                         Classes.items.set(editItemPosition, tempView);
+                        Classes.adapter.notifyDataSetChanged();
                         AddItem.saveContent(Classes.adapter.getContext());
                         break;
                     case "assignments":
                         Assignments.items.set(editItemPosition, tempView);
+                        Assignments.adapter.notifyDataSetChanged();
                         AddItem.saveContent(Assignments.adapter.getContext());
                         break;
                     case "todo":
                         Tasks.items.set(editItemPosition, tempView);
+                        Tasks.adapter.notifyDataSetChanged();
                         AddItem.saveContent(Tasks.adapter.getContext());
                         break;
                     case "tests":
                         Tests.items.set(editItemPosition, tempView);
+                        Tests.adapter.notifyDataSetChanged();
                         AddItem.saveContent(Tests.adapter.getContext());
                         break;
                     default:
