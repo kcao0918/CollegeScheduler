@@ -21,8 +21,8 @@ public class Tasks extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.fragment_assignments, container, false);
-        ListView lv = rootView.findViewById(R.id.listview);
+        View rootView = inflater.inflate(R.layout.fragment_tasks, container, false);
+        ListView lv = rootView.findViewById(R.id.listviewtasks);
         items = new ArrayList<>();
         adapter = new ListViewAdapter(getActivity(), items);
         lv.setAdapter(adapter);

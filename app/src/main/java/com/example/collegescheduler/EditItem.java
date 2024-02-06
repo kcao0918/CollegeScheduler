@@ -20,27 +20,6 @@ public class EditItem extends AppCompatActivity {
         EditText input3 = findViewById(R.id.editinput3);
         ImageView backImageButtonEdit = findViewById(R.id.backImageEdit);
         Button changeButton = findViewById(R.id.changeItemButton);
-        String text1 = input1.getText().toString();
-        String text2 = input2.getText().toString();
-        String text3 = input3.getText().toString();
-        ItemView tempView = new ItemView(text1, text2, text3);
-        switch (MainActivity.selectedFrag) {
-            case "classes":
-                Classes.items.set(editItemPosition, tempView);
-                break;
-            case "assignments":
-                Assignments.items.set(editItemPosition, tempView);
-                break;
-            case "todo":
-                Tasks.items.set(editItemPosition, tempView);
-                break;
-            case "tests":
-                Tests.items.set(editItemPosition, tempView);
-                break;
-            default:
-                break;
-        }
-        finish();
 
         backImageButtonEdit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,7 +27,41 @@ public class EditItem extends AppCompatActivity {
                 finish();
             }
         });
+
+        changeButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Retrieve text from EditText fields
+                String text1 = input1.getText().toString();
+                String text2 = input2.getText().toString();
+                String text3 = input3.getText().toString();
+
+                // Create an ItemView with the retrieved text
+                ItemView tempView = new ItemView(text1, text2, text3);
+
+                // Update the appropriate list based on selected fragment
+                switch (MainActivity.selectedFrag) {
+                    case "classes":
+                        Classes.items.set(editItemPosition, tempView);
+                        AddItem.saveContent(Classes.adapter.getContext());
+                        break;
+                    case "assignments":
+                        Assignments.items.set(editItemPosition, tempView);
+                        AddItem.saveContent(Assignments.adapter.getContext());
+                        break;
+                    case "todo":
+                        Tasks.items.set(editItemPosition, tempView);
+                        AddItem.saveContent(Tasks.adapter.getContext());
+                        break;
+                    case "tests":
+                        Tests.items.set(editItemPosition, tempView);
+                        AddItem.saveContent(Tests.adapter.getContext());
+                        break;
+                    default:
+                        break;
+                }
+                finish();
+            }
+        });
     }
-
-
 }
